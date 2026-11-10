@@ -19,4 +19,4 @@ Feature: Create Account functionality
       | Sam      |                        |            |           | Empty  | Email                                                                                     |
       | Sam      | invalidemailformat     |            | Owner@123 | failed | please include an '@'                                                                     |
       | Sam      | newbusiness@infoez.com |            | short     | failed | Please lengthen this text to 6 characters or more (you are currently using 5 characters). |
-      | Sam      | newbusiines@infoez.com | 9876543210 | Owner@123 | valid  | Welcome to Infoez                                                                          |
+      | Sam      | newmaiilids@infoez.com | 9876543210 | Owner@123 | valid  | Welcome to Infoez                                                                          |

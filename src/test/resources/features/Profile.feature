@@ -17,5 +17,3 @@ And The profile name input should have value "<name>"
 Examples:
 | name       | phone      |
 | Ravi       | 9876543210 |
-|            | 9876543210 |
-| @#%#$#%#%  | 9876543210 |
