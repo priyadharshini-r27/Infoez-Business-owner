@@ -1,68 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-11-13T16:28:49 IST" name="Default suite" finished-at="2026-11-13T16:29:30 IST" duration-ms="41031">
+  <suite started-at="2026-11-13T18:13:28 IST" name="Default suite" finished-at="2026-11-13T18:13:43 IST" duration-ms="14924">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@33ecda92]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-11-13T16:28:49 IST" name="Default test" finished-at="2026-11-13T16:29:30 IST" duration-ms="41031">
+    <test started-at="2026-11-13T18:13:28 IST" name="Default test" finished-at="2026-11-13T18:13:43 IST" duration-ms="14924">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T16:28:49 IST" name="setUpClass" finished-at="2026-11-13T16:28:49 IST" duration-ms="541" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T18:13:28 IST" name="setUpClass" finished-at="2026-11-13T18:13:29 IST" duration-ms="593" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@191a0351]]>
+                <![CDATA[org.testng.TestRunner@242ff747]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T16:28:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-11-13T16:29:30 IST" duration-ms="40422" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T18:13:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-11-13T18:13:35 IST" duration-ms="6801" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Navigate to Notifications page"]]>
+                <![CDATA["Successfully add a new business"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["User Notifications Page Automation and Validation"]]>
+                <![CDATA["Add Business Functionality"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for stepdefinitions.NotificationStep$$Lambda/0x000000002f3e9d60@31834a2b
-(tried for 30 seconds with 500 milliseconds interval)
-Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 157.0.8103.40, chrome: {chromedriverVersion: 157.0.8103.78 (4b3d0dabb825..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:processID: 18636, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 33c678586edb905d974f7956cfbedbc4]]>
+              <![CDATA[camera button is not opening camera functionality expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for stepdefinitions.NotificationStep$$Lambda/0x000000002f3e9d60@31834a2b
-(tried for 30 seconds with 500 milliseconds interval)
-Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 157.0.8103.40, chrome: {chromedriverVersion: 157.0.8103.78 (4b3d0dabb825..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:processID: 18636, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10...., webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 33c678586edb905d974f7956cfbedbc4
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-at stepdefinitions.NotificationStep.the_notification_background_colour_should_change_to_indicate_it_is_read(NotificationStep.java:60)
-at ✽.the notification background colour should change to indicate it is read(file:///C:/Users/Admin/eclipse-workspace/InfoezOwner/src/test/resources/features/Notification.feature:12)
+              <![CDATA[java.lang.AssertionError: camera button is not opening camera functionality expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at stepdefinitions.MyBusinessStep.user_verify_the_camera_option(MyBusinessStep.java:89)
+at ✽.User verify the camera option(file:///C:/Users/Admin/eclipse-workspace/InfoezOwner/src/test/resources/features/MyBusiness.feature:17)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T16:29:30 IST" name="tearDownClass" finished-at="2026-11-13T16:29:30 IST" duration-ms="17" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T18:13:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-11-13T18:13:40 IST" duration-ms="4393" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successfully add a new business"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Business Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[camera button is not opening camera functionality expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: camera button is not opening camera functionality expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at stepdefinitions.MyBusinessStep.user_verify_the_camera_option(MyBusinessStep.java:89)
+at ✽.User verify the camera option(file:///C:/Users/Admin/eclipse-workspace/InfoezOwner/src/test/resources/features/MyBusiness.feature:17)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T18:13:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-11-13T18:13:43 IST" duration-ms="3058" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Leads"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Business Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@33ecda92]" started-at="2026-11-13T18:13:43 IST" name="tearDownClass" finished-at="2026-11-13T18:13:43 IST" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

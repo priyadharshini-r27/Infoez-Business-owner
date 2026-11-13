@@ -1,6 +1,7 @@
-@Business
+
 Feature: Add Business Functionality
-@Home 
+
+@Business 
 Scenario Outline: Successfully add a new business 
 Given User is on the Home page
 When User clicks on the My Businesses button
@@ -13,6 +14,7 @@ And User enters new business address "<Address>"
 And User enters new business phone "<Phone>"
 And User enters new business email "<Email>"
 And User enters new business photo "<Photo>"
+Then User verify the camera option
 Then User verify the input fields "<BusinessName>" "<Description>" "<City>" "<Address>" "<Phone>" and "<Email>"
 Then User clicks on submit new business button
 

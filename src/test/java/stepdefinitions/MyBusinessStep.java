@@ -81,6 +81,13 @@ public class MyBusinessStep {
 		String absolutePath = uploadFile.getAbsolutePath();
 		myBusinessesPage.uploadphoto(absolutePath);
 	}
+	
+	@Then("User verify the camera option")
+	public void user_verify_the_camera_option() {
+		myBusinessesPage.clickusecamera();
+		String currenturl = myBusinessesPage.getcurrentUrl();
+		Assert.assertTrue(currenturl.contains("camera"), "camera button is not opening camera functionality");
+	}
 
 	@Then("User verify the input fields {string} {string} {string} {string} {string} and {string}")
 	public void user_verify_the_input_fields_and(String expectedBusinessName, String expectedDescription,
@@ -123,6 +130,12 @@ public class MyBusinessStep {
 			System.out.println("All business input fields validated successfully.");
 		}
 	}
+	
+	@And("User clicks on submit new business button")
+	public void user_clicks_on_submit_new_business_button() {
+		myBusinessesPage.clickSubmitBusiness();
+	}
+
 
 	@When("User verify the business count")
 	public void user_verify_the_business_count() {
@@ -152,11 +165,7 @@ public class MyBusinessStep {
 
 	}
 
-	@And("User clicks on submit new business button")
-	public void user_clicks_on_submit_new_business_button() {
-		myBusinessesPage.clickSubmitBusiness();
-	}
-
+	
 	@Given("User is on the Business dashboard page")
 	public void user_is_on_the_business_dashboard_page() {
 		LoginPage loginPage = new LoginPage(DriverFactory.getDriver());

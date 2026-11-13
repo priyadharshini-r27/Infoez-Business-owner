@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +50,9 @@ public class MyBusinessPage {
 
 	@FindBy(xpath = "//button[@data-testid='photo-uploader-choose']")
 	private WebElement uploadphoto;
+	
+	@FindBy(xpath = "//button[@data-testid='photo-uploader-camera']")
+	private WebElement camera;
 
 	@FindBy(xpath = "//button[normalize-space()='Create business']")
 	private WebElement createBusinessBtn;
@@ -135,6 +139,12 @@ public class MyBusinessPage {
 		WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
 //		element.sendKeys(uploadphoto, absolutePath);
 	}
+	
+	public void clickusecamera() {
+		element.scrollToElement(camera);
+	}
+	
+	
 
 	public void clickSubmitBusiness() {
 		element.scrollToElement(createBusinessBtn);
@@ -217,6 +227,7 @@ public class MyBusinessPage {
 	public void clickoverview() {
 		element.Click(overview);
 	}
-
+    
+	
 
 }
