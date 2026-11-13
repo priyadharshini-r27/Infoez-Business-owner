@@ -57,8 +57,6 @@ public class LoginStep {
 			Assert.assertTrue(actualMessage != null && actualMessage.contains("@"),
 					"HTML email validation message not displayed");
 
-			// Assert.assertEquals(actualMessage.trim(), message.trim(), "invalid lodin
-			// mismatch");
 		} else if (expectedResult.equalsIgnoreCase("empty")) {
 			String actualMessage;
 			if (message.equalsIgnoreCase("Email")) {

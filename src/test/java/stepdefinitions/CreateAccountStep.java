@@ -55,7 +55,7 @@ public class CreateAccountStep {
 	public void the_user_enters_the_password(String password) {
 		createAccountPage.enterPassword(password);
 	}
-	
+
 	@Then("user validates registration input fields {string} {string} and {string}")
 	public void user_validates_registration_input_fields(String Expectedfullname, String Expectedemail,
 			String Expectedphone) {
@@ -80,88 +80,70 @@ public class CreateAccountStep {
 	}
 
 	@Then("the page outcome should match {string} and {string}")
-	 public void the_page_outcome_should_match_and(String expectedResult, String message) {
+	public void the_page_outcome_should_match_and(String expectedResult, String message) {
 
-	 if (expectedResult.equalsIgnoreCase("valid")) {
-		 if (expectedResult.equalsIgnoreCase("valid")) {
+		if (expectedResult.equalsIgnoreCase("valid")) {
 
-			 WebDriverWait wait = new WebDriverWait(
-			 driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOf(createAccountPage.getWelcomeMessageElement()));
-			 //wait.until(ExpectedConditions.visibilityOf(createAccountPage.getwelcomemessage()));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.visibilityOf(createAccountPage.getWelcomeMessageElement()));
 
-			 String actualMessage = createAccountPage.getwelcomemessage();
+			String actualMessage = createAccountPage.getwelcomemessage();
 
-			 System.out.println("Expected Message: " + message);
-			 System.out.println("Actual Message: " + actualMessage);
+			System.out.println("Expected Message: " + message);
+			System.out.println("Actual Message: " + actualMessage);
 
-			 Assert.assertTrue(
-			 actualMessage.contains(message),
-			 "Account creation success message not displayed"
-			 );
-			 }
-	 //Assert.assertFalse(driver.getCurrentUrl().contains("register"),
-	// "Registration failed: User remained on the register page.");
+			Assert.assertTrue(actualMessage.contains(message), "Account creation success message not displayed");
 
-	 } else if (expectedResult.equalsIgnoreCase("failed")) {
-	 String actualMessage;
+		} else if (expectedResult.equalsIgnoreCase("failed")) {
+			String actualMessage;
 
-	 if (message.contains("@")) {
-	 actualMessage = createAccountPage.getEmailValidationMessage();
-	 System.out.println("Expected Message: " + message);
-	 System.out.println("Actual Message: " + actualMessage);
-	 Assert.assertTrue(actualMessage != null && actualMessage.contains("@"),
-	 "HTML email validation message not displayed");
-	 } else {
-	 
-	 actualMessage = createAccountPage.getPasswordValidationMessage();
-	 System.out.println("Expected Message: " + message);
-	 System.out.println("Actual Message: " + actualMessage);
-	 Assert.assertTrue(
-	 actualMessage != null && actualMessage.toLowerCase().contains(message.toLowerCase()),
-	 "HTML password length validation message not displayed");
-	 }
+			if (message.contains("@")) {
+				actualMessage = createAccountPage.getEmailValidationMessage();
+				System.out.println("Expected Message: " + message);
+				System.out.println("Actual Message: " + actualMessage);
+				Assert.assertTrue(actualMessage != null && actualMessage.contains("@"),
+						"HTML email validation message not displayed");
+			} else {
 
-	 } else if (expectedResult.equalsIgnoreCase("Empty")) {
-	   //String actualMessage;
-	 }
-	 else if (expectedResult.equalsIgnoreCase("Empty")) {
+				actualMessage = createAccountPage.getPasswordValidationMessage();
+				System.out.println("Expected Message: " + message);
+				System.out.println("Actual Message: " + actualMessage);
+				Assert.assertTrue(actualMessage != null && actualMessage.toLowerCase().contains(message.toLowerCase()),
+						"HTML password length validation message not displayed");
+			}
 
-		 if (message == null || message.trim().isEmpty()) {
+		} else if (expectedResult.equalsIgnoreCase("Empty")) {
 
-		 Assert.assertTrue(
-		 createAccountPage.getFullNameValue().isEmpty(),
-		 "Full Name field is not empty");
+			if (message == null || message.trim().isEmpty()) {
 
-		 Assert.assertTrue(
-		 createAccountPage.getEmailValue().isEmpty(),
-		 "Email field is not empty");
+				Assert.assertTrue(createAccountPage.getFullNameValue().isEmpty(), "Full Name field is not empty");
 
-		 Assert.assertTrue(
-		 createAccountPage.getPhoneValue().isEmpty(),
-		 "Phone field is not empty");
+				Assert.assertTrue(createAccountPage.getEmailValue().isEmpty(), "Email field is not empty");
 
-		 System.out.println("All input fields are empty");
+				Assert.assertTrue(createAccountPage.getPhoneValue().isEmpty(), "Phone field is not empty");
 
-		 } else {
+				System.out.println("All input fields are empty");
 
-		 if (message.equalsIgnoreCase("FullName")) {
-		 expectedResult = createAccountPage.getFullNameValidationMessage();
+			} else {
 
-		 } else if (message.equalsIgnoreCase("Email")) {
-		 expectedResult = createAccountPage.getEmailValidationMessage();
+				if (message.equalsIgnoreCase("FullName")) {
+					expectedResult = createAccountPage.getFullNameValidationMessage();
 
-		 } else if (message.equalsIgnoreCase("Password")) {
-		 expectedResult = createAccountPage.getPasswordValidationMessage();
+				} else if (message.equalsIgnoreCase("Email")) {
+					expectedResult = createAccountPage.getEmailValidationMessage();
 
-		 } else {
-		 throw new IllegalArgumentException("Unknown field: " + message);
-		 }
+				} else if (message.equalsIgnoreCase("Password")) {
+					expectedResult = createAccountPage.getPasswordValidationMessage();
 
-		 System.out.println("Validation Message: " + expectedResult);
-		 Assert.assertNotNull(expectedResult);
-		 Assert.assertFalse(expectedResult.isEmpty());
-		 }}
-		 }
+				} else {
+					throw new IllegalArgumentException("Unknown field: " + message);
+				}
+
+				System.out.println("Validation Message: " + expectedResult);
+				Assert.assertNotNull(expectedResult);
+				Assert.assertFalse(expectedResult.isEmpty());
+			}
+		}
+	}
 
 }

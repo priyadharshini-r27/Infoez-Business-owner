@@ -1,7 +1,7 @@
 @Business
 Feature: Add Business Functionality
 @Home 
-Scenario Outline: Successfully add a new business
+Scenario Outline: Successfully add a new business 
 Given User is on the Home page
 When User clicks on the My Businesses button
 And  User clicks on the Add Business button
@@ -16,11 +16,12 @@ And User enters new business photo "<Photo>"
 Then User verify the input fields "<BusinessName>" "<Description>" "<City>" "<Address>" "<Phone>" and "<Email>"
 Then User clicks on submit new business button
 
-
-
 Examples:
 | BusinessName          | Description                     | City      | Address           | Phone      | Email |
 | Aroma Cafe            | Fresh coffee and tasty snacks   | Bengaluru | 45 Indiranagar Rd | 9876543210 | contact@urbancafe.com |
+|@##$%^^&&              |     28768276895@##              |     tewu  |64783wfch          |875         |rr@gmail.com|
+
+
 
 Scenario:
 Given User is on the Business dashboard page
@@ -41,6 +42,7 @@ Then User click on Save changes button
 Examples:
 |businessname| description|
 |Sivam cafe |Authentic South Indian cuisine|
+|@##$%^^*   | 73856748@$#$            |
 
 @Business
 @leads

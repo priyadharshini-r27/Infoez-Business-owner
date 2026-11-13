@@ -23,12 +23,10 @@ public class NotificationStep {
 	private NotificationPage notificationpage = new NotificationPage(DriverFactory.getDriver());
 	private String initialBackgroundColor;
 
-	
-
 	@And("User clicks on the Notifications from the dropdown menu")
 	public void user_clicks_on_the_notifications_from_the_dropdown_menu() {
-		
-			notificationpage.clickNotificationsMenuOption();
+
+		notificationpage.clickNotificationsMenuOption();
 		boolean isDisplayed = notificationpage.isNotificationmenudisplayed();
 		Assert.assertTrue(isDisplayed, "notificationmenu is not displayed");
 		System.out.println("notification menu displayed successfully");
@@ -44,32 +42,30 @@ public class NotificationStep {
 	}
 
 	@When("User clicks on {string} for the first notification")
-	public void user_clicks_on_for_the_first_notification(String actionText) throws InterruptedException {
-       
+	public void user_clicks_on_for_the_first_notification(String actionText)  {
+
 		initialBackgroundColor = notificationpage.getNotificationBackgroundColor();
 		System.out.println("Background color before clicking Mark read: " + initialBackgroundColor);
 
 		notificationpage.clickMarkRead();
 		System.out.println("Clicked '" + actionText + "' on the first notification.");
+
 		
-		Thread.sleep(1500);
 	}
 
 	@Then("the notification background colour should change to indicate it is read")
 	public void the_notification_background_colour_should_change_to_indicate_it_is_read() {
-		
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(),Duration.ofSeconds(30));
-		wait.until(d->!notificationpage.getNotificationBackgroundColor().equals(initialBackgroundColor));
-	 String finalBackgroundColor = notificationpage.getNotificationBackgroundColor();
+
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(30));
+		wait.until(d -> !notificationpage.getNotificationBackgroundColor().equals(initialBackgroundColor));
+		String finalBackgroundColor = notificationpage.getNotificationBackgroundColor();
 		System.out.println("Before: " + initialBackgroundColor);
 		System.out.println("After:" + finalBackgroundColor);
 
-    	Assert.assertNotNull(finalBackgroundColor, "Notification background color is null!");
+		Assert.assertNotNull(finalBackgroundColor, "Notification background color is null!");
 
 		Assert.assertNotEquals(finalBackgroundColor, initialBackgroundColor,
 				"Notification background color did not change after clicking Mark read!");
 
-//		System.out.println("Validated successfully: Notification background color changed from "
-//				+ initialBackgroundColor + " to " + finalBackgroundColor);
 	}
 }

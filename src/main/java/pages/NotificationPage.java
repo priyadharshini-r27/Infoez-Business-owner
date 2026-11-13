@@ -17,7 +17,7 @@ public class NotificationPage {
 
 	private WebDriver driver;
 	private Element element;
-	
+
 	@FindBy(xpath = "//a[@data-testid='biz-nav-my-businesses']")
 	private WebElement myBusinessesMenu;
 
@@ -35,9 +35,6 @@ public class NotificationPage {
 
 	@FindBy(xpath = "//button[text()='Mark read']")
 	private WebElement markReadButton;
-	
-	
-
 
 	public NotificationPage(WebDriver driver) {
 		this.driver = driver;
@@ -45,7 +42,6 @@ public class NotificationPage {
 		this.element = new Element(driver);
 	}
 
-	
 	public void clickNotificationsMenuOption() {
 		element.clickOnElement(notificationsMenuOption);
 	}

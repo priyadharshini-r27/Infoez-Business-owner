@@ -1,7 +1,12 @@
 package stepdefinitions;
 
 import org.testng.Assert;
+
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import driverFactory.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -35,7 +40,8 @@ public class FavoritesStep {
 
 	@When("User clicks on the Explore navigation link")
 	public void user_clicks_on_the_explore_navigation_link() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+//		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(60));
 		getFavoritesPage().clickExploreNavLink();
 	}
 
@@ -50,11 +56,12 @@ public class FavoritesStep {
 	public void a_pop_up_message_should_be_displayed_with_text(String expectedMessage) {
 		String actualMessage = getFavoritesPage().getPopupMessageText();
 		System.out.println("Actual Pop-up Message: " + actualMessage);
-		
+
 		Assert.assertNotNull(actualMessage, "Pop-up notification message was null!");
-		Assert.assertTrue(actualMessage.toLowerCase().contains(expectedMessage.toLowerCase()), 
+		Assert.assertTrue(actualMessage.toLowerCase().contains(expectedMessage.toLowerCase()),
 				"Expected pop-up message to contain '" + expectedMessage + "', but found: " + actualMessage);
 	}
+
 	@When("User clicks on the menu at top right")
 	public void user_clicks_on_the_menu_at_top_right() throws InterruptedException {
 		Thread.sleep(5000);
@@ -64,12 +71,11 @@ public class FavoritesStep {
 	@When("User navigates to the Favorites page via profile menu")
 	public void user_navigates_to_the_favorites_page_via_profile_menu() throws InterruptedException {
 		Thread.sleep(2000);
-//		getFavoritesPage().clickProfileDropdown();
 		getFavoritesPage().clickFavoritesMenuOption();
-		
+
 		boolean isDisplayed = getFavoritesPage().isFavoritesPageDisplayed();
 		boolean isUrlCorrect = getFavoritesPage().getCurrentUrl().contains("favorite");
-		
+
 		System.out.println("Current Favorites URL: " + getFavoritesPage().getCurrentUrl());
 		Assert.assertTrue(isDisplayed || isUrlCorrect, "User failed to navigate to the Favorites page!");
 	}

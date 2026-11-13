@@ -18,35 +18,30 @@ public class FavoritesPage {
 	private WebDriver driver;
 	private Element element;
 
-	
 	@FindBy(xpath = "//a[@data-testid='nav-explore']")
 	private WebElement exploreNavLink;
 
-	
 	@FindBy(xpath = "//button[@data-testid='user-menu-btn']")
 	private WebElement profileDropdownBtn;
 
-	
 	@FindBy(xpath = "//div[@role='menuitem' and @data-testid='menu-favorites']")
 	private WebElement favoritesMenuOption;
-	
+
 	@FindBy(xpath = "(//*[text()='Aroma Cafe']//preceding::button[1])[1]")
 	private WebElement Aromacafe;
 
-	
 	@FindBy(xpath = "//h1[text()='Your favorites']")
 	private WebElement favoritesPageHeader;
-	
+
 	@FindBy(xpath = "//button[contains(@data-testid,'favorite-toggle-btn')]//*[name()='svg']")
 	private WebElement Explorehearticon;
-	
+
 	@FindBy(xpath = "//*[@class='lucide lucide-heart h-4 w-4 fill-current'])[2]")
 	private WebElement favoritesremovebtn;
 
-	
 	@FindBy(xpath = "//div[contains(text(),'Added to favorites')]")
 	private WebElement successPopupMessage;
-	
+
 	@FindBy(xpath = "//button[@data-testid='favorite-toggle-btn-1d115ad7-76ef-4b04-9732-93f9b1aff0e8']")
 	private WebElement removePopupMessage;
 
@@ -77,7 +72,7 @@ public class FavoritesPage {
 	}
 
 	public void clickFavoriteIconForBusiness() {
-		
+
 		element.Click(Aromacafe);
 	}
 

@@ -46,7 +46,7 @@ public class MyBusinessPage {
 
 	@FindBy(xpath = "//input[@type='email']")
 	private WebElement emailInput;
-	
+
 	@FindBy(xpath = "//button[@data-testid='photo-uploader-choose']")
 	private WebElement uploadphoto;
 
@@ -67,23 +67,21 @@ public class MyBusinessPage {
 
 	@FindBy(xpath = "//h1[text()='Leads']")
 	private WebElement leadsHeading;
-	
+
 	@FindBy(xpath = "(//*[@class='rounded-2xl border border-border bg-card p-5 flex items-center gap-4'])[1]")
-	private List<WebElement>  mybusinessdiaplayedcount;
-	
+	private List<WebElement> mybusinessdiaplayedcount;
+
 	@FindBy(xpath = "(//*[@class='mt-2 font-display font-bold text-3xl'])[1]")
 	private WebElement businesstotalcount;
-	
+
 	@FindBy(xpath = "//div[@data-testid='dashboard-stat-leads']//div[contains(@class,'font-display') and contains(@class,'text-3xl')]")
 	private WebElement leadtotalcount;
-	
+
 	@FindBy(xpath = "(//*[@class='rounded-2xl border border-border bg-card p-5'])[1]")
 	private List<WebElement> leaddisplayedcount;
-	
+
 	@FindBy(xpath = "//a[@data-testid='biz-nav-overview']")
 	private WebElement overview;
-	
-	
 
 	public MyBusinessPage(WebDriver driver) {
 		this.driver = driver;
@@ -119,7 +117,7 @@ public class MyBusinessPage {
 	public void enterCity(String city) {
 		element.sendKeys(cityInput, city);
 	}
-	
+
 	public void enterAddress(String address) {
 		element.sendKeys(addressInput, address);
 	}
@@ -131,7 +129,7 @@ public class MyBusinessPage {
 	public void enterEmail(String email) {
 		element.sendKeys(emailInput, email);
 	}
-	
+
 	public void uploadphoto(String absolutePath) {
 		element.scrollToElement(uploadphoto);
 		WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
@@ -157,7 +155,7 @@ public class MyBusinessPage {
 		element.Click(saveButton);
 	}
 
-	public  String getbusinessNameValue() {
+	public String getbusinessNameValue() {
 		return businessNameInput.getAttribute("value");
 	}
 
@@ -168,10 +166,10 @@ public class MyBusinessPage {
 	public String getcityValue() {
 		return cityInput.getAttribute("value");
 	}
-	
+
 	public String getaddressValue() {
 		return addressInput.getAttribute("value");
-		}
+	}
 
 	public String getemailValue() {
 		return emailInput.getAttribute("value");
@@ -180,12 +178,10 @@ public class MyBusinessPage {
 	public String getphoneValue() {
 		return phoneInput.getAttribute("value");
 	}
-	
-	public String getcurrentUrl(){
+
+	public String getcurrentUrl() {
 		return driver.getCurrentUrl();
-		}
-		
-	
+	}
 
 	public void clickLeadsButton() {
 		element.Click(leadsMenu);
@@ -200,30 +196,27 @@ public class MyBusinessPage {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='" + businessName + "']")));
 		return businessElement.isDisplayed();
 	}
-	
+
 	public int getbusinessdisplayedcount() {
 		return mybusinessdiaplayedcount.size();
 	}
-	
+
 	public int getleaddisplayedcount() {
 		return leaddisplayedcount.size();
 	}
-	
+
 	public String getbusinesstotalcount() {
 		return element.getText(businesstotalcount);
 	}
+
 	public String getleadtotalcount() {
 		return element.getText(leadtotalcount);
-	
+
 	}
+
 	public void clickoverview() {
 		element.Click(overview);
 	}
-//	public ProfilePage dologin(String email, String password){
-//		  element.sendKeys(emailInput, email);
-//		  element.sendKeys(passwordInput, password);
-//		  element.Click(signInButton);
-//		  return new ProfilePage(DriverFactory.getDriver());
-//	}
-	
+
+
 }

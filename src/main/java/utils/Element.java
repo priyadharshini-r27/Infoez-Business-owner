@@ -36,6 +36,10 @@ public class Element {
 
 		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
+	
+	public WebElement waitForVisibilityOfElementLocated(By locator) {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
 
 	
 	public List<WebElement> waitForVisibilityOfAllelemens(List<WebElement> element) {
